@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import AllProduct from "./AllProduct";
 import Container from "react-bootstrap/Container";
 
-
 const productsArr = [
   {
     title: "Colors",
@@ -37,7 +36,7 @@ const productsArr = [
   },
 ];
 
-const Products = () => {
+const Products = (props) => {
   return (
     <Fragment>
       <Container className="mt-3">
