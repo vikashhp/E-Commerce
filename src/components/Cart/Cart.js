@@ -1,3 +1,7 @@
+import Button from "react-bootstrap/esm/Button";
+import Modal from "../Modal/Modal";
+
+
 const cartElements = [
   {
     title: "Colors",
@@ -32,17 +36,20 @@ const cartElements = [
 
 const Cart = (props) => {
   return (
-    <div>
+    <Modal onClose={props.onClick}>
+      <h2>CartItems</h2>
       {cartElements.map((item) => (
         <li>
           <div>
             <img src={item.imageUrl} />
             <h2>{item.title}</h2>
             <p>{item.price}</p>
+            <Button variant="danger">Remove</Button>
           </div>
         </li>
       ))}
-    </div>
+      
+    </Modal>
   );
 };
 

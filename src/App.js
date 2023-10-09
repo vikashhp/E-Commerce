@@ -12,11 +12,14 @@ function App(props) {
     setIsShownCart(true)
     
   }
+  const hideCartHandler=()=>{
+    setIsShownCart(false)
+  }
 
 
   return (
     <div className="App">
-      {isShownCart && <Cart/>}
+      {isShownCart && <Cart onClick={hideCartHandler}/>}
       <Display onAdd={cartHandler}/>
     </div>
   );
