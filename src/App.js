@@ -3,6 +3,7 @@ import "./App.css";
 import Display from "./components/Display/Display";
 import { useState } from "react";
 import Cart from "./components/Cart/Cart";
+import CartContextProvider from "./components/store/CartProvider";
 
 function App(props) {
 
@@ -18,10 +19,10 @@ function App(props) {
 
 
   return (
-    <div className="App">
+    <CartContextProvider>
       {isShownCart && <Cart onClick={hideCartHandler}/>}
       <Display onAdd={cartHandler}/>
-    </div>
+    </CartContextProvider>
   );
 }
 

@@ -45,6 +45,7 @@ const Products = (props) => {
             title={item.title}
             price={item.price}
             imageUrl={item.imageUrl}
+            id={Math.random()}
           />
         ))}
       </Container>
