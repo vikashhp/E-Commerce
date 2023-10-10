@@ -5,18 +5,24 @@ import Button from "react-bootstrap/esm/Button";
 import Cart from "../Cart/Cart";
 import { useContext } from "react";
 import CartContext from "../store/CartContext";
+import { Link } from "react-router-dom";
 
 const Navbars = (props) => {
   const cartCtx = useContext(CartContext);
 
- const numberOfCartItems=cartCtx.items.length
+  const numberOfCartItems = cartCtx.items.length;
 
   return (
-    <Navbar expand="lg" bg="dark" variant="dark">
+    <Navbar expand="lg" bg="dark" variant="dark" fixed="top">
       <Container>
-        <Nav.Link style={{ color: "white" }}>Home</Nav.Link>
+        <Nav.Link style={{ color: "white" }}>
+          {" "}
+          <Link to="/">Home</Link>
+        </Nav.Link>
         <Nav.Link style={{ color: "white" }}>Store</Nav.Link>
-        <Nav.Link style={{ color: "white" }}>About</Nav.Link>
+        <Nav.Link style={{ color: "white" }}>
+          <Link to="/About">About</Link>
+        </Nav.Link>
         <Button onClick={props.onClick}>Cart-{numberOfCartItems}</Button>
       </Container>
     </Navbar>

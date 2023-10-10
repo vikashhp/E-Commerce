@@ -4,6 +4,9 @@ import Display from "./components/Display/Display";
 import { useState } from "react";
 import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/store/CartProvider";
+import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import { Fragment } from "react";
+import About from "./components/About/About";
 
 function App(props) {
 
@@ -17,12 +20,21 @@ function App(props) {
     setIsShownCart(false)
   }
 
+  const router =createBrowserRouter([
+    {path:'/About',element:<About/>},
+    {path:'/',element:<Display/>},
+    
+  ])
+
 
   return (
+
+    <RouterProvider router={router}>
     <CartContextProvider>
       {isShownCart && <Cart onClick={hideCartHandler}/>}
       <Display onAdd={cartHandler}/>
     </CartContextProvider>
+    </RouterProvider>
   );
 }
 

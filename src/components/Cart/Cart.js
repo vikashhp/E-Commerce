@@ -1,54 +1,54 @@
 import Button from "react-bootstrap/esm/Button";
 import Modal from "../Modal/Modal";
+import { useContext } from "react";
+import CartContext from "../store/CartContext";
+import CartItem from "./CartItem";
 
+// const cartElements = [
+//   {
+//     title: "Colors",
 
-const cartElements = [
-  {
-    title: "Colors",
+//     price: 100,
 
-    price: 100,
+//     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
 
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
+//     quantity: 2,
+//   },
 
-    quantity: 2,
-  },
+//   {
+//     title: "Black and white Colors",
 
-  {
-    title: "Black and white Colors",
+//     price: 50,
 
-    price: 50,
+//     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
 
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
+//     quantity: 3,
+//   },
 
-    quantity: 3,
-  },
+//   {
+//     title: "Yellow and Black Colors",
 
-  {
-    title: "Yellow and Black Colors",
+//     price: 70,
 
-    price: 70,
+//     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
 
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-
-    quantity: 1,
-  },
-];
+//     quantity: 1,
+//   },
+// ];
 
 const Cart = (props) => {
+  const cartCtx = useContext(CartContext);
   return (
     <Modal onClose={props.onClick}>
-      <h2>CartItems</h2>
-      {cartElements.map((item) => (
-        <li>
-          <div>
-            <img src={item.imageUrl} />
-            <h2>{item.title}</h2>
-            <p>{item.price}</p>
-            <Button variant="danger">Remove</Button>
-          </div>
-        </li>
+      <h2 style={{textAlign:"center"}}>CartItems</h2>
+      {cartCtx.items.map((item) => (
+        <CartItem
+          title={item.title}
+          imageUrl={item.imageUrl}
+          price={item.price}
+          key={item.id}
+        />
       ))}
-      
     </Modal>
   );
 };
