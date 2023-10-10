@@ -17,9 +17,9 @@ const Navbars = (props) => {
       <Container>
         <Nav.Link style={{ color: "white" }}>
           {" "}
-          <Link to="/">Home</Link>
+          <Link to="/Home">Home</Link>
         </Nav.Link>
-        <Nav.Link style={{ color: "white" }}>Store</Nav.Link>
+        <Nav.Link style={{ color: "white" }}> <Link to="/">Store</Link></Nav.Link>
         <Nav.Link style={{ color: "white" }}>
           <Link to="/About">About</Link>
         </Nav.Link>

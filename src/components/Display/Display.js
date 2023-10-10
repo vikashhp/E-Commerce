@@ -6,6 +6,7 @@ const Display = (props) => {
   return (
     <>
       <Navbars onClick={props.onAdd}/>
+      
       <Cards />
       <Products />
     </>

@@ -1,0 +1,19 @@
+
+
+.genric{
+    text-align: center;
+    background-color: grey;
+    width: 100%;
+    border:1px solod red;
+    margin-top:3%;
+    height: 200px;
+    color:white;   
+}
+
+.box{
+    margin-top: 2%;
+    border:1px solid rgb(233, 233, 11);
+    width:20%;
+  margin: auto;
+}
+

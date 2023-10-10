@@ -7,6 +7,7 @@ import CartContextProvider from "./components/store/CartProvider";
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import { Fragment } from "react";
 import About from "./components/About/About";
+import Home from "./components/Home/Home";
 
 function App(props) {
 
@@ -22,7 +23,9 @@ function App(props) {
 
   const router =createBrowserRouter([
     {path:'/About',element:<About/>},
+    {path:'/Home',element:<Home/>},
     {path:'/',element:<Display/>},
+    
     
   ])
 
