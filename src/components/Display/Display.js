@@ -4,12 +4,10 @@ import Products from "../Product/Products";
 
 const Display = (props) => {
   return (
-    <>
-      <Navbars onClick={props.onAdd}/>
-      
+    <div onClick={props.onAdd}>
       <Cards />
       <Products />
-    </>
+    </div>
   );
 };
 

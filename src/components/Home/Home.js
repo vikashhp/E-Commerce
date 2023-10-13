@@ -5,7 +5,6 @@ import Table1 from "./Table";
 const Home = () => {
   return (
     <Fragment>
-      <Navbars />
       <div className={classes.genric}>
         <h1>The Genric</h1>
         <div className={classes.box}>
