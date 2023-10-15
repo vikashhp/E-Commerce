@@ -4,12 +4,13 @@ import Display from "./components/Display/Display";
 import { useState } from "react";
 import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/store/CartProvider";
-import { Route } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { Fragment } from "react";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Navbars from "./components/Navbar/Navbars";
 import ContactUs from "./components/ContactUs/ContactUs";
+import ProductPage from "./components/ProductPage/ProductPage";
 
 function App(props) {
   const [isShownCart, setIsShownCart] = useState(false);
@@ -26,18 +27,26 @@ function App(props) {
       <header>
         <Navbars onAdd={showcartHandler} />
       </header>
-      <Route path="/Home">
-        <Home />
-      </Route>
-      <Route path="/About">
-        <About />
-      </Route>
-      <Route path="/Display">
-        <Display />
-      </Route>
-      <Route path="/Contact">
-     <ContactUs/>
-      </Route>
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/Home" />
+        </Route>
+        <Route path="/Home">
+          <Home />
+        </Route>
+        <Route path="/About">
+          <About />
+        </Route>
+        <Route path="/Display">
+          <Display />
+        </Route>
+        <Route path="/Contact">
+          <ContactUs />
+        </Route>
+        <Route path="/productPage">
+          <ProductPage />
+        </Route>
+      </Switch>
 
       {isShownCart && <Cart onClick={hideCartHandler} />}
     </CartContextProvider>

@@ -1,7 +1,10 @@
 import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/Container";
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import CartContext from "../store/CartContext";
+import { Route } from "react-router-dom/cjs/react-router-dom.min";
+import ProductPage from "../ProductPage/ProductPage";
+import {Link} from 'react-router-dom'
 
 const AllProduct = (props) => {
 
@@ -19,10 +22,13 @@ const AllProduct = (props) => {
   }
 
   const price = `$${props.price}`;
+
+ 
+
   return (
     <>
       <div>
-        <img src={props.imageUrl} />
+       <Link to='productPage'> <img  src={props.imageUrl} /></Link>
         <h2>{props.title}</h2>
         <p>{price}</p>
         <Container className="mb-3">
