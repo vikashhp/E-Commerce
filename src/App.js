@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import "./App.css";
-import Display from "./components/Display/Display";
+
 import { useState } from "react";
 import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/store/CartProvider";
@@ -12,9 +12,14 @@ import Navbars from "./components/Navbar/Navbars";
 import ContactUs from "./components/ContactUs/ContactUs";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Login from "./components/Login/Login";
+import CartContext from "./components/store/CartContext";
+import { useContext } from "react";
+import Products from "./components/Product/Products";
 
 function App(props) {
   const [isShownCart, setIsShownCart] = useState(false);
+
+  const cartCtx = useContext(CartContext);
 
   const showcartHandler = () => {
     setIsShownCart(true);
@@ -38,17 +43,24 @@ function App(props) {
         <Route path="/About">
           <About />
         </Route>
-        <Route path="/Display">
-          <Display />
+
+        <Route path="/products">
+          <Products />
         </Route>
+
         <Route path="/Contact">
           <ContactUs />
         </Route>
         <Route path="/productPage">
           <ProductPage />
         </Route>
+
         <Route path="/Login">
-          <Login/>
+          <Login />
+        </Route>
+
+        <Route path="*">
+          <Redirect to="/" />
         </Route>
       </Switch>
 

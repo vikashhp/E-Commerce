@@ -40,13 +40,15 @@ const productsArr = [
 const Products = (props) => {
   return (
     <Fragment>
-      <Container className="mt-3">
+      <Container className="mt-5">
         {productsArr.map((item) => (
           <AllProduct
+          
             title={item.title}
             price={item.price}
             imageUrl={item.imageUrl}
             id={Math.random()}
+            
           />
         ))}
       </Container>

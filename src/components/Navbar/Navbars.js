@@ -17,7 +17,7 @@ const Navbars = (props) => {
     <Navbar expand="lg" bg="dark" variant="dark" fixed="top">
       <Container>
         <Nav.Link style={{ color: "white" }}><NavLink to='/Home'>Home</NavLink></Nav.Link>
-        <Nav.Link style={{ color: "white" }}><NavLink to='/Display'>Store</NavLink></Nav.Link>
+        <Nav.Link style={{ color: "white" }}><NavLink to='/products'>Store</NavLink></Nav.Link>
         <Nav.Link style={{ color: "white" }}><NavLink to='/About'>About</NavLink></Nav.Link>
         <Nav.Link style={{ color: "white" }}><NavLink to='/Contact'>Contact Us</NavLink></Nav.Link>
         <Nav.Link style={{ color: "white" }}><NavLink to='/Login'>Login</NavLink></Nav.Link>

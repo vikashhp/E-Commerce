@@ -26,9 +26,7 @@ const CartContextProvider = (props) => {
 
   const initialState = localStorage.getItem("token");
 
-  const [token, setToken] = useState(initialState);
-
-  const userIsLoggedIn = !!token;
+  
 
   const addItemToCartHandler = (item) => {
     dispatch({ type: "ADD", item: item });
@@ -37,6 +35,10 @@ const CartContextProvider = (props) => {
   const removeItemFromCartHandler = (id) => {
     dispatch({ type: "REMOVE", id: id });
   };
+
+  const [token, setToken] = useState(initialState);
+
+  const userIsLoggedIn = true;
 
   const loginHandler = (token) => {
     setToken(token);

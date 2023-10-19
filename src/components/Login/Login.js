@@ -49,7 +49,7 @@ const Login = () => {
       })
       .then((data) => {
         authCtx.login(data.idToken)
-        history.replace("/Display");
+        history.replace("/products");
       })
       .catch((err) => {
         alert(err.message);
