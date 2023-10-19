@@ -11,6 +11,7 @@ import Home from "./components/Home/Home";
 import Navbars from "./components/Navbar/Navbars";
 import ContactUs from "./components/ContactUs/ContactUs";
 import ProductPage from "./components/ProductPage/ProductPage";
+import Login from "./components/Login/Login";
 
 function App(props) {
   const [isShownCart, setIsShownCart] = useState(false);
@@ -45,6 +46,9 @@ function App(props) {
         </Route>
         <Route path="/productPage">
           <ProductPage />
+        </Route>
+        <Route path="/Login">
+          <Login/>
         </Route>
       </Switch>
 
