@@ -50,6 +50,7 @@ const Login = () => {
       .then((data) => {
         authCtx.login(data.idToken)
         history.replace("/products");
+       localStorage.setItem('email',data.email)
       })
       .catch((err) => {
         alert(err.message);

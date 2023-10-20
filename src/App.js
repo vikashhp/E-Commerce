@@ -15,6 +15,7 @@ import Login from "./components/Login/Login";
 import CartContext from "./components/store/CartContext";
 import { useContext } from "react";
 import Products from "./components/Product/Products";
+import axios from 'axios'
 
 function App(props) {
   const [isShownCart, setIsShownCart] = useState(false);
@@ -23,6 +24,11 @@ function App(props) {
 
   const showcartHandler = () => {
     setIsShownCart(true);
+   let data = axios.get('https://crudcrud.com/api/2f808c1207c740b590df8c1f3ae42c3f/storedata').then(res =>{
+    console.log(res)
+   
+   })
+  
   };
   const hideCartHandler = () => {
     setIsShownCart(false);
